@@ -28,8 +28,16 @@
 }
 
 - (IBAction)updateLabels:(id)sender {
-    self.tipLabel.text = @"$20.00";
-    self.totalLabel.text = @"$120.00";
+    double bill = [self.billField.text doubleValue];
+    
+    double tip = bill * 0.2;
+    double total = bill + tip;
+    
+    
+    self.tipLabel.text = [NSString
+                          stringWithFormat:@"$%f", tip];
+    self.totalLabel.text = [NSString
+                            stringWithFormat:@"$%f", total];
 }
 
 
