@@ -9,6 +9,10 @@
 
 @interface TipViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *billField;
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
+
 @end
 
 @implementation TipViewController
@@ -22,6 +26,13 @@
     
     [self.view endEditing:true];
 }
+
+- (IBAction)updateLabels:(id)sender {
+    self.tipLabel.text = @"$20.00";
+    self.totalLabel.text = @"$120.00";
+}
+
+
 
 /*
 #pragma mark - Navigation
