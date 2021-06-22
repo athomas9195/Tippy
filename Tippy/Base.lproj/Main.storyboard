@@ -64,6 +64,9 @@
                                     <segment title="20%"/>
                                     <segment title="25%"/>
                                 </segments>
+                                <connections>
+                                    <action selector="updateLabels:" destination="BYZ-38-t0r" eventType="valueChanged" id="f80-BF-2WV"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mag-et-nQJ">
                                 <rect key="frame" x="193" y="180" width="168" height="34"/>
@@ -86,6 +89,7 @@
                     <connections>
                         <outlet property="billField" destination="mag-et-nQJ" id="njW-cs-Lh2"/>
                         <outlet property="tipLabel" destination="den-we-Kcg" id="2IE-12-qDb"/>
+                        <outlet property="tipPercentageControl" destination="tqN-Pn-R47" id="tMH-iT-fcp"/>
                         <outlet property="totalLabel" destination="UC1-Qc-f1g" id="rC5-6j-p3F"/>
                     </connections>
                 </viewController>
