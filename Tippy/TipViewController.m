@@ -29,10 +29,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+
+    
+    
+
     if(self.billField.text.length ==0) {
         [self hideLabels];
     }
 }
+
+
+
 
 
 
@@ -64,6 +71,7 @@
     
     double tip = bill * tipPercentage;
     double total = bill + tip;
+    
     
      
     self.tipLabel.text = [NSString
