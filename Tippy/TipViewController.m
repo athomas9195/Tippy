@@ -28,6 +28,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    if(self.billField.text.length ==0) {
+        [self hideLabels];
+    }
 }
 
 
@@ -51,9 +55,7 @@
 
 
 - (IBAction)updateLabels:(id)sender {
-    if(self.billField.text.length ==0) {
-        [self hideLabels];
-    }
+    
     
     double tipPercentages[] = {0.15, 0.2, 0.25};
     double tipPercentage = tipPercentages[self.tipPercentageControl.selectedSegmentIndex];
@@ -68,6 +70,11 @@
                           stringWithFormat:@"$%.2f", tip];
     self.totalLabel.text = [NSString
                             stringWithFormat:@"$%.2f", total];
+    if(self.billField.text.length ==0) {
+        [self hideLabels];
+    } else{
+        [self showLabels];
+    }
 }
 
 
@@ -81,7 +88,7 @@
 
 
 - (void) hideLabels {
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.0 animations:^{
         CGRect billFrame = self.billField.frame;
         billFrame.origin.y += 200;
         
@@ -94,6 +101,28 @@
         self.labelsAllContainerView.frame = labelsFrame;
         
         self.labelsAllContainerView.alpha =0;
+        
+    }];
+
+}
+
+
+
+
+- (void) showLabels {
+    [UIView animateWithDuration:0.5 animations:^{
+        CGRect billFrame = self.billField.frame;
+        billFrame.origin.y = 167;
+        
+        self.billField.frame = billFrame;
+        
+        CGRect labelsFrame = self.labelsAllContainerView.frame;
+        
+        labelsFrame.origin.y = 271;
+        
+        self.labelsAllContainerView.frame = labelsFrame;
+        
+        self.labelsAllContainerView.alpha =100;
         
     }];
 
