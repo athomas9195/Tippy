@@ -104,7 +104,7 @@
         
         CGRect labelsFrame = self.labelsAllContainerView.frame;
         
-        labelsFrame.origin.y += 200;
+        labelsFrame.origin.y = 88;
         
         self.labelsAllContainerView.frame = labelsFrame;
         
@@ -120,13 +120,13 @@
 - (void) showLabels {
     [UIView animateWithDuration:0.5 animations:^{
         CGRect billFrame = self.billField.frame;
-        billFrame.origin.y = 167;
+        billFrame.origin.y = 88;
         
         self.billField.frame = billFrame;
         
         CGRect labelsFrame = self.labelsAllContainerView.frame;
         
-        labelsFrame.origin.y = 271;
+        labelsFrame.origin.y = 268;
         
         self.labelsAllContainerView.frame = labelsFrame;
         
